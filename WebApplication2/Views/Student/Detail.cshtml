@@ -1,0 +1,47 @@
+﻿@model WebApplication2.Models.Student
+        @{
+            ViewBag.Title = "Detail";
+        }
+    <h2>Detail Student</h2>
+
+    <div>
+
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayFor(Model => Model.Id)
+            </dt>
+            <dd>
+                @Html.DisplayFor(Model => Model.Id)
+            </dd>
+            <dt>
+                @Html.DisplayFor(Model => Model.Name)
+            </dt>
+            <dd>
+                @Html.DisplayFor(Model => Model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayFor(Model => Model.Email)
+            </dt>
+            <dd>
+                @Html.DisplayFor(Model => Model.Email)
+            </dd>
+            <dt>
+                @Html.DisplayFor(Model => Model.Address)
+            </dt>
+            <dd>
+                @Html.DisplayFor(Model => Model.Address)
+            </dd>
+            <dt>
+                @Html.DisplayFor(Model => Model.Telephone)
+            </dt>
+            <dd>
+                @Html.DisplayFor(Model => Model.Telephone)
+            </dd>
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = Model.Id })|
+        @Html.ActionLink("Back to List", "Index")
+    </p>

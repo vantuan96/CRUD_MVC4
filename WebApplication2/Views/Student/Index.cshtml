@@ -1,0 +1,12 @@
+﻿@model   IEnumerable<WebApplication2.Models.Student>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Partial View</h2>
+<div id="firstTab">
+    @Html.Partial("PartialView")
+    
+</div>
