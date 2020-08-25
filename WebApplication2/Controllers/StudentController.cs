@@ -54,30 +54,30 @@ namespace WebApplication2.Controllers
             return View();
         }
 
+        //branch1
 
+        [HttpPost]
+        // [ValidateAntiForgeryToken]
+        public ActionResult Create(Student student)
 
-        //[HttpPost]
-        //// [ValidateAntiForgeryToken]
-        //public ActionResult Create(Student student)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    db.Students.Add(student);
+                    db.SaveChanges();
+                    return RedirectToAction(nameof(Index));
+                }
+            }
+            catch (RetryLimitExceededException)
+            {
 
-        //{
-        //    try
-        //    {
-        //        if (ModelState.IsValid)
-        //        {
-        //            db.Students.Add(student);
-        //            db.SaveChanges();
-        //            return RedirectToAction(nameof(Index));
-        //        }
-        //    }
-        //    catch (RetryLimitExceededException)
-        //    {
-
-        //        //Log the error (uncomment dex variable name and add a line here to write a log.)
-        //        ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists, see your system administrator.");
-        //    }
-        //    return View(student);
-        //}
+                //Log the error (uncomment dex variable name and add a line here to write a log.)
+                ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists, see your system administrator.");
+            }
+            return View(student);
+        }
         public ActionResult Edit(int? id)
         {
             if (id == null)
